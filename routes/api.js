@@ -1,10 +1,11 @@
-var express = require("express");
-var authRouter = require("./auth");
-var bookRouter = require("./book");
+let express = require("express");
+let userRouter = require("./user");
+let postRouter  = require("./post");
+let friendRouter = require("./friend");
+let app = express();
 
-var app = express();
+app.use("/user/",userRouter);
+app.use("/post/",postRouter);
+app.use("/friend/",friendRouter);
 
-app.use("/auth/", authRouter);
-app.use("/book/", bookRouter);
-
-module.exports = app;
+ module.exports = app;
